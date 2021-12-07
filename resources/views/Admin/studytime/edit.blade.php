@@ -1,0 +1,31 @@
+@extends('welcome')
+
+@section('title', 'Page Title')
+
+
+
+@section('content')
+<form action="{{route('studytime.update',$studytime->id_studytime)}}" method="POST" enctype="multipart/form-data">
+  @method('PUT')
+@csrf
+<div class="card">
+<div class="card-header">
+                <h3 class="card-title">Sửa Thông Tin Sinh Viên</h3>
+              </div>
+<div class="card-body">
+<div class="form-group">
+                    
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Ca Học</label>
+                    <input type="text" class="form-control" name="studytime" placeholder="Ca Học" value="{{$studytime->studytime}}">
+                  </div>
+                  
+                <div class="btn-group" role="group" aria-label="Basic example">
+                  <button type="submit" class="btn btn-primary" name="btnname">Sửa</button>
+  
+                </div>
+</div>
+</form>
+@stop
